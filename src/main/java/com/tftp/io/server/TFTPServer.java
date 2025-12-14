@@ -59,7 +59,7 @@ public class TFTPServer {
 
     public static void main(String[] args) {
         int port = TFTPProtocol.DEFAULT_PORT;
-        String rootDir = "D:/Прога/TFTP/Server";
+        String rootDir = "D:/TFTP/Server";
 
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
