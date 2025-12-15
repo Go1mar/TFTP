@@ -19,6 +19,7 @@ public class TFTPServer {
         this.rootDirectory = rootDirectory;
         this.threadPool = Executors.newFixedThreadPool(10);
         ensureDirectoryExists();
+        Logger.initialize(rootDirectory);
     }
 
     private void ensureDirectoryExists() {
@@ -55,6 +56,7 @@ public class TFTPServer {
             serverSocket.close();
         threadPool.shutdown();
         Logger.log("TFTP Server stopped");
+        Logger.close();
     }
 
     public static void main(String[] args) {
@@ -77,7 +79,11 @@ public class TFTPServer {
         }
 
         TFTPServer server = new TFTPServer(port, rootDir);
-        Runtime.getRuntime().addShutdownHook(new Thread(server::stop));
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Shutdown hook triggered");
+            server.stop();
+        }));
 
         server.start();
     }

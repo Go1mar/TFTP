@@ -11,7 +11,7 @@ public class ClientModel {
     private long totalSize;
     private ClientModelListener listener;
     private PrintWriter clientLogWriter;
-    private final String logDirectory = "D:/Прога/TFTP/Client/logs";
+    private final String logDirectory = "D:/TFTP/Client/logs";
     private final String logFile = "tftp_client.log";
 
     public interface ClientModelListener {
