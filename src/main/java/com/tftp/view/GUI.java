@@ -112,7 +112,7 @@ public class GUI extends JFrame {
 
         panel.add(new JLabel("Directory:"));
         JPanel dirPanel = new JPanel(new BorderLayout(5, 0));
-        directoryField = new JTextField("D:/Прога/TFTP/Client");
+        directoryField = new JTextField("D:/TFTP/Client");
         dirPanel.add(directoryField, BorderLayout.CENTER);
         browseButton = new JButton("Browse");
         dirPanel.add(browseButton, BorderLayout.EAST);
