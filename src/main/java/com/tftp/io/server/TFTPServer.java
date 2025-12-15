@@ -69,7 +69,7 @@ public class TFTPServer {
                         port = Integer.parseInt(args[++i]);
                     break;
                 case "-d":
-                case "--directory":
+                case "--dir":
                     if (i + 1 < args.length)
                         rootDir = args[++i];
                     break;
